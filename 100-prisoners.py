@@ -24,8 +24,10 @@ class PrisionersGame:
         shuffled = self.drawer_ids[:]
         random.shuffle(shuffled)
         self.drawers = dict(zip(self.drawer_ids, shuffled))
-    def play_naive(self):
-        return
+    def play_naive(self, player_number):
+        for attempt in range(self.max_attempts):
+            if self.drawers[random.choice(self.drawer_ids)] == plyer_number:
+                return True
     def play_naive_mem(self, player_number):
         not_attemped = self.drawer_ids[:]
         for attempt in range(self.max_attempts):
