@@ -28,8 +28,16 @@ class PrisionersGame:
         for attempt in range(self.max_attempts):
             if self.drawers[random.choice(self.drawer_ids)] == plyer_number:
                 return True
-    def play_naive_mem(self):
-        return
+    def play_naive_mem(self, player_number):
+        not_attemped = self.drawer_ids[:]
+        for attempt in range(self.max_attempts):
+                        guess = random.choice(not_attemped)
+            not_attemped.remove(guess)
+
+            if self.drawers[guess] == player_number:
+                return True
+
+        return False
     def play_optimum(self, player_number):
         """ Open the drawer that matches the player number and then open the drawer
         with the revealed number.
