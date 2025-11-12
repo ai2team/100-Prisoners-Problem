@@ -18,8 +18,10 @@ def main():
 class PrisionersGame:
     def __init__(self):
         return
-    def play_naive(self):
-        return
+    def play_naive(self, player_number):
+        for attempt in range(self.max_attempts):
+            if self.drawers[random.choice(self.drawer_ids)] == plyer_number:
+                return True
     def play_naive_mem(self):
         return
     def play_optimum(self):
